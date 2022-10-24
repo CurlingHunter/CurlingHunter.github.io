@@ -48,20 +48,110 @@ Existing AI systems are used in tennis, basketball, and football, which are main
 Hawk-Eye System used in tennis is the most mature and advanced technologies applied in sports, but its runtime is ~ 10 s, which is above 1,000 times slower than ours (Our CurlingHunter only takes ~ 9.005 ms). 
 The supplementary material of our paper compares CurlingHunter with existing AI systems in detail, demonstrating that CurlingHunter is the first AI sports system in history that can be applied in real time to assist the game, improve the interest of watching game, etc.
 
-
 ## **Media Reports**
-[CCTV]()
+[CCTV5](https://2022.cctv.com/2022/03/02/VIDEo6c7b8tv2DhGSIeAwrnY220302.shtml) | 
+[CCTV10](https://tv.cctv.com/2022/02/17/VIDEYNtTNJj9Jkbg0HD0hMME220217.shtml?spm=C53121759377.PvNzMjwOU8x4.0.0) |
+[WAIC 2022](http://sh-aia.com/dynamics/detail389.htm) | 
+[中国工业新闻网](http://www.cinn.cn/dfgy/202202/t20220216_252673_wap.html) | 
+[中华网](https://www.baidu.com/link?url=XNs_ZUGZHU1_ta0oC--VvYEjBRtK0YTgE5aF9LoGn_jOIxhLiU5t83ON-noDK6nA7IgmWdkH3XTPKmlxiQwnCsCbhZeCBuSqU_YaBmEaonC&wd=&eqid=bb8aba1e000921f0000000036353c367) | 
+[浙江省经济和信息化厅](https://jxt.zj.gov.cn/art/2022/2/22/art_1657979_58928232.html) | 
+[新民晚报](https://baijiahao.baidu.com/s?id=1724073030087092396&wfr=spider&for=pc) |  
+[腾讯新闻](https://new.qq.com/rain/a/20211030A0446N00) | 
+[搜狐](https://www.sohu.com/a/498023908_120181749) | 
 [体坛网](http://www.titan24.com/publish/app/data/2020/04/26/315681/os_news.html) | 
-[新民晚报](https://baijiahao.baidu.com/s?id=1724073030087092396&wfr=spider&for=pc) | 
 [一点资讯](http://hw.yidianzixun.com/article/0bHe9PzU?s=hwbrowser&appid=hwbrowser&s_real=hwbrowser&ctype=news&from_related=1) | 
 [上观网](https://export.shobserver.com/baijiahao/html/447890.html) | 
 [财视传媒](https://www.baidu.com/link?url=8PENrdD4JtTbU4FRLbMgAmKw8P5l1K8k2sP9R_-Hprk-11CvYGXxTie0ZzFDkRqJLBGjRpDNM8jbqds-ReyDXOeNqOA1TgP07MLuOgZ30yG&wd=&eqid=bca23d5b001ccf48000000036353c1a0) | 
-[中国工业新闻网](http://www.cinn.cn/dfgy/202202/t20220216_252673_wap.html) | 
 [智驾网](https://baijiahao.baidu.com/s?id=1724791100724675147&wfr=spider&for=pc) | 
 [商汤科技](https://www.sensetime.com/cn/news-detail/41164739) | 
 [科创版日报](https://baijiahao.baidu.com/s?id=1729136742236108141&wfr=spider&for=pc) | 
 [中国经营报](https://baijiahao.baidu.com/s?id=1724508134127922968&wfr=spider&for=pc) | 
 [红星新闻](https://baijiahao.baidu.com/s?id=1728608215909288051&wfr=spider&for=pc) | 
-[中华网](https://www.baidu.com/link?url=XNs_ZUGZHU1_ta0oC--VvYEjBRtK0YTgE5aF9LoGn_jOIxhLiU5t83ON-noDK6nA7IgmWdkH3XTPKmlxiQwnCsCbhZeCBuSqU_YaBmEaonC&wd=&eqid=bb8aba1e000921f0000000036353c367) | 
 [科技湃](https://page.om.qq.com/page/OLcb7f1Zh26fP2HlVty6z1cg0) | 
 [北晚在线](https://www.takefoto.cn/news/2022/02/25/10047236.shtml) | 
+
+
+## **Supplementary Videos**
+
+<center>
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/1.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+<br/>
+<font size="3">Verification the accuracy of CurlingHunter </font>
+<br/>
+
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/2.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+<br/>
+
+<font size="3">Performance Test of CurlingHunter </font>
+<br/>
+
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/3.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+<br/>
+<font size="3">Application in Beijing 2022 Winter Olympics </font>
+<br/>
+
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/4.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+<br/>
+<font size="3">Application in Beijing 2022 Winter Paralympic </font>
+<br/>
+
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/5.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+
+<br/>
+<font size="3">Live broadcast of Winter Olympics </font>
+<br/>
+
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/6.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+<br/>
+<font size="3">Live broadcast of Winter Paralympic </font>
+<br/>
+
+<iframe 
+	width="640"
+	height="368"
+	src="/videos/7.mp4"
+	frameborder="0"
+	allowfullscreen>
+</iframe> 
+<br/>
+<font size="3">Motion Analysis </font>
+<br/>
+<center>
+
+
