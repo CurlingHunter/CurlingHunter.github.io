@@ -7,7 +7,7 @@ categories: jekyll update
 
 ## **Introduction**
 
-A multi-target multi-camera curling tracking system, termed [CurlingHunter](https://spj.sciencemag.org/journals/research/aip/9805054/), is proposed, which can be applied in actual curling games in real time to assist athletes to compete, enhance the interest of the game, etc. Due to the regulations of curling game, no auxiliary equipment can be added to the curling stones, hence only non-contact measurement methods such as machine vision can be used in CurlingHunter. CurlingHunter has solved these problems: 
+A multi-target multi-camera curling tracking system, termed [CurlingHunter](https://downloads.spj.sciencemag.org/research/aip/9805054.pdf), is proposed, which can be applied in actual curling games in real time to assist athletes to compete, enhance the interest of the game, etc. Due to the regulations of curling game, no auxiliary equipment can be added to the curling stones, hence only non-contact measurement methods such as machine vision can be used in CurlingHunter. CurlingHunter has solved these problems: 
  -  The problem of accurately capturing relatively small curling stones through long-sighted distance (> 20 m) in the super-large space environment with many occlusions; 
  -  The problem of lens distortion correction in large scenes without interfering with the ice tracks; 
  -  The problem of accuracy of curling stone's visual positioning on the ice sheet; 
@@ -50,23 +50,18 @@ The supplementary material of our paper compares CurlingHunter with existing AI 
 
 
 ## **Media Reports**
-[CCTV5](https://2022.cctv.com/2022/03/02/VIDEo6c7b8tv2DhGSIeAwrnY220302.shtml) | 
-[CCTV10](https://tv.cctv.com/2022/02/17/VIDEYNtTNJj9Jkbg0HD0hMME220217.shtml?spm=C53121759377.PvNzMjwOU8x4.0.0) |
-[WAIC 2022](http://sh-aia.com/dynamics/detail389.htm) | 
-[中国工业新闻网](http://www.cinn.cn/dfgy/202202/t20220216_252673_wap.html) | 
-[中华网](https://www.baidu.com/link?url=XNs_ZUGZHU1_ta0oC--VvYEjBRtK0YTgE5aF9LoGn_jOIxhLiU5t83ON-noDK6nA7IgmWdkH3XTPKmlxiQwnCsCbhZeCBuSqU_YaBmEaonC&wd=&eqid=bb8aba1e000921f0000000036353c367) | 
-[浙江省经济和信息化厅](https://jxt.zj.gov.cn/art/2022/2/22/art_1657979_58928232.html) | 
-[新民晚报](https://baijiahao.baidu.com/s?id=1724073030087092396&wfr=spider&for=pc) |  
-[腾讯新闻](https://new.qq.com/rain/a/20211030A0446N00) | 
-[搜狐](https://www.sohu.com/a/498023908_120181749) | 
+[CCTV]()
 [体坛网](http://www.titan24.com/publish/app/data/2020/04/26/315681/os_news.html) | 
+[新民晚报](https://baijiahao.baidu.com/s?id=1724073030087092396&wfr=spider&for=pc) | 
 [一点资讯](http://hw.yidianzixun.com/article/0bHe9PzU?s=hwbrowser&appid=hwbrowser&s_real=hwbrowser&ctype=news&from_related=1) | 
 [上观网](https://export.shobserver.com/baijiahao/html/447890.html) | 
 [财视传媒](https://www.baidu.com/link?url=8PENrdD4JtTbU4FRLbMgAmKw8P5l1K8k2sP9R_-Hprk-11CvYGXxTie0ZzFDkRqJLBGjRpDNM8jbqds-ReyDXOeNqOA1TgP07MLuOgZ30yG&wd=&eqid=bca23d5b001ccf48000000036353c1a0) | 
+[中国工业新闻网](http://www.cinn.cn/dfgy/202202/t20220216_252673_wap.html) | 
 [智驾网](https://baijiahao.baidu.com/s?id=1724791100724675147&wfr=spider&for=pc) | 
 [商汤科技](https://www.sensetime.com/cn/news-detail/41164739) | 
 [科创版日报](https://baijiahao.baidu.com/s?id=1729136742236108141&wfr=spider&for=pc) | 
 [中国经营报](https://baijiahao.baidu.com/s?id=1724508134127922968&wfr=spider&for=pc) | 
 [红星新闻](https://baijiahao.baidu.com/s?id=1728608215909288051&wfr=spider&for=pc) | 
+[中华网](https://www.baidu.com/link?url=XNs_ZUGZHU1_ta0oC--VvYEjBRtK0YTgE5aF9LoGn_jOIxhLiU5t83ON-noDK6nA7IgmWdkH3XTPKmlxiQwnCsCbhZeCBuSqU_YaBmEaonC&wd=&eqid=bb8aba1e000921f0000000036353c367) | 
 [科技湃](https://page.om.qq.com/page/OLcb7f1Zh26fP2HlVty6z1cg0) | 
 [北晚在线](https://www.takefoto.cn/news/2022/02/25/10047236.shtml) | 
