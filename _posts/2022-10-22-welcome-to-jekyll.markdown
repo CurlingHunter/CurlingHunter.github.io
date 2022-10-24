@@ -38,7 +38,7 @@ CurlingHunter consists of three main modules (Fig. 1D): single-camera tracking a
 
 ![Method]({{"/images/Undistort.jpg"|absolute_url}})
 
-In particular, we show the result of len distortion correction from single image. It solved the problem of camera calibration in the stadium very gracefully.
+In particular, we show the result of lens distortion correction from single image. It solved the problem of camera calibration in the stadium very gracefully.
 
 
 ## **Results**
