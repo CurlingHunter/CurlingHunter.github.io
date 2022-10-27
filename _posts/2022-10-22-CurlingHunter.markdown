@@ -7,7 +7,7 @@ categories: jekyll update
 
 ## **Introduction**
 
-A multi-target multi-camera curling tracking system, termed [CurlingHunter](https://downloads.spj.sciencemag.org/research/aip/9805054.pdf), is proposed, which can be applied in actual curling games in real time to assist athletes to compete, enhance the interest of the game, etc. Due to the regulations of curling game, no auxiliary equipment can be added to the curling stones, hence only non-contact measurement methods such as machine vision can be used in CurlingHunter. CurlingHunter has solved these problems: 
+A multi-target multi-camera curling tracking system, termed [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/), is proposed, which can be applied in actual curling games in real time to assist athletes to compete, enhance the interest of the game, etc. Due to the regulations of curling game, no auxiliary equipment can be added to the curling stones, hence only non-contact measurement methods such as machine vision can be used in CurlingHunter. CurlingHunter has solved these problems: 
  -  The problem of accurately capturing relatively small curling stones through long-sighted distance (> 20 m) in the super-large space environment with many occlusions; 
  -  The problem of lens distortion correction in large scenes without interfering with the ice tracks; 
  -  The problem of accuracy of curling stone's visual positioning on the ice sheet; 
@@ -22,18 +22,18 @@ Although we focus on curling, our system is readily transferable to other sports
 
 ![System Archetecture]({{"/images/Components.jpg"|absolute_url}})
 
-The curling game of the 2022 Beijing Winter Olympics was held in Beijing "Ice Cube" (Fig. 1A), the largest curling stadiums in the history of the Olympics. There were four ice tracks about 46-meter length and 5-meter width in the middle of "Ice Cube" . 
-Our CurlingHunter consisted of forty-two cameras arranged in "Ice Cube" (Fig. 1A) with overlapping field of views (Fig. 1B) to ensure that every part of ice tracks was captured by at least three cameras from different angles so as to solve the problem of occlusions including people, truss, camera, etc. 
+The curling game of the 2022 Beijing Winter Olympics was held in Beijing "Ice Cube" (Fig. 1a), the largest curling stadiums in the history of the Olympics. There were four ice tracks about 46-meter length and 5-meter width in the middle of "Ice Cube" . 
+Our CurlingHunter consisted of forty-two cameras arranged in "Ice Cube" (Fig. 1a) with overlapping field of views (Fig. 1b) to ensure that every part of ice tracks was captured by at least three cameras from different angles so as to solve the problem of occlusions including people, truss, camera, etc. 
 
-CurlingHunter consists of three main modules (Fig. 1D): single-camera tracking and visual positioning, multi-camera data association and trajectory generation, and motion analysis and trajectory prediction.  
+CurlingHunter consists of three main modules (Fig. 1d): single-camera tracking and visual positioning, multi-camera data association and trajectory generation, and motion analysis and trajectory prediction.  
 
 ## **Algorithm**
 ![Method]({{"/images/Methods.jpg"|absolute_url}})
 
  We overview of three main module for CurlingHunter. 
-- Single-camera tracking and visual positioning(Fig. 2A). The module consists of three stages, i.e. sing-camera detection and tracking, landmark detection, and lens distortion correction. 
-- Multi-camera data association and trajectory generation (Fig. 2B). The module consists of three components, i.e. homography projection, time synchronization, LSTMM based region growing and multi-camera fusion module. 
-- Trajectory prediction(Fig. 2C). The framework consists of three components, i.e. Encoder, Rotation Fusion Module and Decoder.
+- Single-camera tracking and visual positioning(Fig. 2a). The module consists of three stages, i.e. sing-camera detection and tracking, landmark detection, and lens distortion correction. 
+- Multi-camera data association and trajectory generation (Fig. 2b). The module consists of three components, i.e. homography projection, time synchronization, LSTMM based region growing and multi-camera fusion module. 
+- Trajectory prediction(Fig. 2c). The framework consists of three components, i.e. Encoder, Rotation Fusion Module and Decoder.
 
 
 ![Method]({{"/images/Undistort.jpg"|absolute_url}})
@@ -152,6 +152,11 @@ The supplementary material of our paper compares CurlingHunter with existing AI 
 <br/>
 <font size="3">Motion Analysis </font>
 <br/>
-<center>
+</center>
+
+## **Citation**
+
+>Xuanke Shi, Quan Wang, Chao Wang, Rui Wang, Longshu Zheng, Chen Qian, Wei Tang, "An AI-Based Curling Game System for Winter Olympics", Research, vol. 2022, Article ID 9805054, 17 pages, 2022. https://doi.org/10.34133/2022/9805054
+
 
 
