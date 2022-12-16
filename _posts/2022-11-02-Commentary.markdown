@@ -1,162 +1,66 @@
 ---
 layout: post
-title:  "AI-Based Multi-Camera Tracking Systems for Sports: Current Processes and Challenges"
+title:  "AI-Based Multi-Camera Tracking Systems for Sports: Current Progress and Challenges"
 date:   2022-11-02 10:00:16 +0800
 categories: jekyll update
 ---
 
-## **Introduction**
 
-A multi-target multi-camera curling tracking system, termed [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/), is proposed, which can be applied in actual curling games in real time to assist athletes to compete, enhance the interest of the game, etc. Due to the regulations of curling game, no auxiliary equipment can be added to the curling stones, hence only non-contact measurement methods such as machine vision can be used in CurlingHunter. CurlingHunter has solved these problems: 
- -  The problem of accurately capturing relatively small curling stones through long-sighted distance (> 20 m) in the super-large space environment with many occlusions; 
- -  The problem of lens distortion correction in large scenes without interfering with the ice tracks; 
- -  The problem of accuracy of curling stone's visual positioning on the ice sheet; 
- -  The problem of occlusions which would interfere with tracking and accuracy, while curling stone is easily blocked by athletes wiping ice, other peoples or objects during games; 
- -  The problem of tracking and re-identifying multiple curling stones due to that all curling stones have identical appearance features; 
- -  The problem of runtime in sing-camera system and multi-camera system. 
- 
-As the first system to be applied to curling game, CurlingHunter demonstrated excellent performances in 2022 Beijing Winter Olympic Games of curling and 2022 Beijing Winter Paralympic Games of curling. 
-Although we focus on curling, our system is readily transferable to other sports.
+## **Abstract**
+The use of artificial intelligence (AI) technologies to capture and reconstruct the trajectories of balls is of great significance in sports, where it can be used to assist athletes/referees during a game, improve the interest of watching the game, and help athletes train after the game. AI-based multi-camera tracking technology is considered to be an effective technology for application in sports. Here, we briefly describe current progresses and challenges ahead in this field.
 
-## **System Archetecture**
-
-![System Archetecture]({{"/images/Components.jpg"|absolute_url}})
-
-The curling game of the 2022 Beijing Winter Olympics was held in Beijing "Ice Cube" (Fig. 1a), the largest curling stadiums in the history of the Olympics. There were four ice tracks about 46-meter length and 5-meter width in the middle of "Ice Cube" . 
-Our CurlingHunter consisted of forty-two cameras arranged in "Ice Cube" (Fig. 1a) with overlapping field of views (Fig. 1b) to ensure that every part of ice tracks was captured by at least three cameras from different angles so as to solve the problem of occlusions including people, truss, camera, etc. 
-
-CurlingHunter consists of three main modules (Fig. 1d): single-camera tracking and visual positioning, multi-camera data association and trajectory generation, and motion analysis and trajectory prediction.  
-
-## **Algorithm**
-![Method]({{"/images/Methods.jpg"|absolute_url}})
-
- We overview of three main module for CurlingHunter. 
-- Single-camera tracking and visual positioning(Fig. 2a). The module consists of three stages, i.e. sing-camera detection and tracking, landmark detection, and lens distortion correction. 
-- Multi-camera data association and trajectory generation (Fig. 2b). The module consists of three components, i.e. homography projection, time synchronization, LSTMM based region growing and multi-camera fusion module. 
-- Trajectory prediction(Fig. 2c). The framework consists of three components, i.e. Encoder, Rotation Fusion Module and Decoder.
+![System Archetecture]({{"/images/Commentary.png"|absolute_url}})
 
 
-![Method]({{"/images/Undistort.jpg"|absolute_url}})
+## **MAIN TEXT**
 
-In particular, we show the result of lens distortion correction from single image. It solved the problem of camera calibration in the stadium very gracefully.
+The application of AI technologies in sports is a common concern of industry and academia [1-4]. When we watch a tennis or cricket match, it is easy to find that some AI technologies, such as machine vision, have been used to assist referees in analysis and judgment. For example, when the ball falls near the sideline during a game, the system generates a virtual 3D playback of the ball's trajectory recorded in the 3D space at that time, showing exactly where the ball was at the moment of landing. In addition, AI technologies can even calculate the forward trajectory of the ball after it contacts the ground under the force through the on-site situation. Currently, these systems have also been applied to badminton, basketball, football, table tennis, etc., where most of them are positioned as "playback systems". Among them, the best-known is the Hawk-Eye System [5], which has been used in tennis for many years. They are mainly used to capture and reconstruct the trajectory of the ball, so as to assist the judgment of referees or the training of athletes. From a technical point of view, they are all AI-based multi-camera tracking systems.
 
+Multi-camera tracking system aims to capture a complete trajectory for each target across multiple cameras and has a broad application prospect in intelligent transportation system [6], sports analysis [7], surveillance camera system [8], etc. Compared with single-camera tracking technology, multi-camera tracking system can associate data across cameras to deal with single view occlusion and achieve good tracking performance. However, multi-camera tracking system is complicated as it contains a series of challenging tasks, such as object detection, lens distortion estimation in huge scene, accurate vision location, single-camera tracking, and inter-camera tracking.
 
-## **Results**
-![Results]({{"/images/Results.jpg"|absolute_url}})
+In the past few years, many methods have been proposed to solve the problem in multi-camera tracking system. These methods usually consist of two steps: single-camera tracking for local target tracking and multi-camera tracking for data association across cameras. In single-camera tracking, most of approaches [9] adopt tracking-by-detection framework to generate tracklet of each target in a single-camera view. By using the motion information and appearance feature [10] of targets, the trackers can integrate spatial temporal information across frames in a video sequence. However, false detection, occlusions, background clutter and objects with similar appearance may cause frequent ID switching and poor tracking performance. In addition, it is difficult to get accurate target position measurement in large scenes through single view. Compared to single-camera tracking, inter-camera tracking aims to associate the tracklets information from multiple views. For inter-camera tracking, different targets occurs in different cameras. To determine the number of targets in multiple cameras, the tracklet graph is constructed from appearance features and spatial information to characterize the similarity of tracklets across cameras, and then the tracklets are grouped into identities by graph partition [11] or hierarchical clustering method [6]. It is a well-know NP-hard problem to solve the problem of data association across cameras, and the running time of the algorithm increases exponentially with the increase of the number of cameras. Although multi-camera tracking system is more robust for object occlusion and can get more accurate location measurement than single view, the existing methods are mostly offline and cannot meet the requirements to process data in real time.
 
-Existing AI systems are used in tennis, basketball, and football, which are mainly used for post-game analysis to help athletes train or assist the referee in judging the games, and cannot be applied in real time to assist games. 
-Hawk-Eye System used in tennis is the most mature and advanced technologies applied in sports, but its runtime is ~ 10 s, which is above 1,000 times slower than ours (Our CurlingHunter only takes ~ 9.005 ms). 
-The supplementary material of our paper compares CurlingHunter with existing AI systems in detail, demonstrating that CurlingHunter is the first AI sports system in history that can be applied in real time to assist the game, improve the interest of watching game, etc.
+The problem of capturing ball's trajectory is a great challenge when applying AI-based multi-camera tracking systems to sports in real time. For example, for the Hawk-Eye System, it would disrupt the pace of watching the game due to that the system cannot get real-time results; the spectator's reaction to the wonderful moment is generated immediately, but the results can only be given after a delayed judgment of the Hawk-Eye System, which is a bad thing for the game. In addition, the accuracy of the system is also a persistent challenge. Errors caused by lens distortion, ball measurement and positioning, and changes in the lighting of the sporting field would lead to miscalculation of the game results, which is often criticized by athletes and spectators.
 
-## **Media Reports**
-[CCTV5](https://2022.cctv.com/2022/03/02/VIDEo6c7b8tv2DhGSIeAwrnY220302.shtml) | 
-[CCTV10](https://tv.cctv.com/2022/02/17/VIDEYNtTNJj9Jkbg0HD0hMME220217.shtml?spm=C53121759377.PvNzMjwOU8x4.0.0) |
-[WAIC 2022](http://sh-aia.com/dynamics/detail389.htm) | 
-[中国工业新闻网](http://www.cinn.cn/dfgy/202202/t20220216_252673_wap.html) | 
-[中华网](https://www.baidu.com/link?url=XNs_ZUGZHU1_ta0oC--VvYEjBRtK0YTgE5aF9LoGn_jOIxhLiU5t83ON-noDK6nA7IgmWdkH3XTPKmlxiQwnCsCbhZeCBuSqU_YaBmEaonC&wd=&eqid=bb8aba1e000921f0000000036353c367) | 
-[浙江省经济和信息化厅](https://jxt.zj.gov.cn/art/2022/2/22/art_1657979_58928232.html) | 
-[新民晚报](https://baijiahao.baidu.com/s?id=1724073030087092396&wfr=spider&for=pc) |  
-[腾讯新闻](https://new.qq.com/rain/a/20211030A0446N00) | 
-[搜狐](https://www.sohu.com/a/498023908_120181749) | 
-[体坛网](http://www.titan24.com/publish/app/data/2020/04/26/315681/os_news.html) | 
-[一点资讯](http://hw.yidianzixun.com/article/0bHe9PzU?s=hwbrowser&appid=hwbrowser&s_real=hwbrowser&ctype=news&from_related=1) | 
-[上观网](https://export.shobserver.com/baijiahao/html/447890.html) | 
-[财视传媒](https://www.baidu.com/link?url=8PENrdD4JtTbU4FRLbMgAmKw8P5l1K8k2sP9R_-Hprk-11CvYGXxTie0ZzFDkRqJLBGjRpDNM8jbqds-ReyDXOeNqOA1TgP07MLuOgZ30yG&wd=&eqid=bca23d5b001ccf48000000036353c1a0) | 
-[智驾网](https://baijiahao.baidu.com/s?id=1724791100724675147&wfr=spider&for=pc) | 
-[商汤科技](https://www.sensetime.com/cn/news-detail/41164739) | 
-[科创版日报](https://baijiahao.baidu.com/s?id=1729136742236108141&wfr=spider&for=pc) | 
-[中国经营报](https://baijiahao.baidu.com/s?id=1724508134127922968&wfr=spider&for=pc) | 
-[红星新闻](https://baijiahao.baidu.com/s?id=1728608215909288051&wfr=spider&for=pc) | 
-[科技湃](https://page.om.qq.com/page/OLcb7f1Zh26fP2HlVty6z1cg0) | 
-[北晚在线](https://www.takefoto.cn/news/2022/02/25/10047236.shtml) | 
+The problem of real-time result is particularly acute when AI-based multi-camera tracking system is applied to curling games. Unlike previous applications in tennis, cricket, badminton, etc., these systems are only used to assist referees and post-match training, where real-time results are not a fatal problem. However, when applied to curling games, the system is used to assist athletes during the game, where athletes analyze the game in real time based on curling stones' trajectories in order to make timely strategic adjustments.
 
+Capturing and reconstructing of curling stones' trajectories in real time is a typical AI-based multi-camera tracking system (Figure 1(a)), which requires a high real-time performance as curling stones' trajectories are used to assist athletes to compete during the curling games. Existing problems, including accurately capturing relatively small curling stones in a big curling stadium with many occlusions, lens distortion correction in large scenes without auxiliary equipment, accurately positioning of curling stones, and the fact that all curling stones have identical appearance features, undoubtedly increase the difficulty in multi-camera tracking system. In addition, the complexity and uncertainty of real-world environment make this problem more challenging.
 
-## **Supplementary Videos**
+Recent progress in the field of AI and sports addresses these challenges well. Writing in Research, Shi et al. [12] address these problems by proposing an AI-based curling game system, termed [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) (Figure 1(b)). Based on machine vision and deep learning technologies, [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) can simultaneously capture the trajectories of multiple curling stones, predict the trajectory of throwing curling stone, and display the curling status in house region via a giant screen in stadium and a live streaming media platform on the internet in real time. The equipment of [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) includes a camera platform based on forty-two cameras with overlapping field of views, which is used to capture the trajectories of curling stones in four ice tracks. In terms of essential technology, [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) is a real-time AI-based multi-camera tracking system.
 
-<center>
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/1.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-<br/>
-<font size="3">Verification the accuracy of CurlingHunter </font>
-<br/>
+In [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/), Shi and colleagues [12] break processing procedure into modular tangible tasks. [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) is divided into three main modules, including single-camera tracking and visual positioning, multi-camera data association and trajectory generation, and motion analysis and trajectory prediction. The first module consists of three stages, i.e. single camera detection and tracking, landmark detection, and lens distortion correction. In this module, the spatial-temporal information across frames can be integrated in to tracklets. The second module consists of three components, i.e. homography projection and time synchronization, long-short term matching mechanism based region growing and multi-camera fusion, and curling stones' actual trajectories can be reconstructed in this module. The third module consists of two parts, i.e. motion analysis and trajectory prediction, and velocity, acceleration, angular velocity and predicted trajectory of curling stone can be achieved in this module.
 
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/2.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-<br/>
+Shi and colleagues [12] conducted detailed experiments and applied CurlingHunter in actual curling games, demonstrating that [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) possesses remarkable real-time performance (~ 9.005 ms), high accuracy (± 3 cm under measurement distance > 20 m) and good stability. [CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) was applied in 2022 Beijing Winter Olympic Games of curling (Figure 1(c)) and 2022 Beijing Winter Paralympic Games of curling, showing impressive performance.
 
-<font size="3">Performance Test of CurlingHunter </font>
-<br/>
+[CurlingHunter](https://spj.sciencemag.org/journals/research/2022/9805054/) is the first real-time multi-camera tracking system that can assist athletes to compete during the games in the history of sports, which improves the competition mode of curling games and greatly promotes the development of curling games. Although Shi and colleagues focus on curling, the real-time AI-based multi-camera tracking system is readily transferable to other sports, such as tennis, badminton, volleyball, etc. However, these sports are different from curling games. There still remains some challenges in reconstructed their trajectories in real time. The motion of curling stone is a two-dimensional plane movement and its velocity is slow, while tennis, badminton, and volleyball are three-dimensional space movements and their velocities are relatively fast, which increase some difficulties in tracking system. But from another perspective, tennis, badminton, and volleyball are only one target and their motion space is relatively small compared with curling game, which means the tracking system degraded into a single-target multi-camera tracking system.
 
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/3.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-<br/>
-<font size="3">Application in Beijing 2022 Winter Olympics </font>
-<br/>
-
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/4.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-<br/>
-<font size="3">Application in Beijing 2022 Winter Paralympic </font>
-<br/>
-
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/5.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-
-<br/>
-<font size="3">Live broadcast of Winter Olympics </font>
-<br/>
-
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/6.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-<br/>
-<font size="3">Live broadcast of Winter Paralympic </font>
-<br/>
-
-<iframe 
-	width="640"
-	height="368"
-	src="/videos/7.mp4"
-	frameborder="0"
-	allowfullscreen>
-</iframe> 
-<br/>
-<font size="3">Motion Analysis </font>
-<br/>
-</center>
-
-## **Citation**
-
->Xuanke Shi, Quan Wang, Chao Wang, Rui Wang, Longshu Zheng, Chen Qian, Wei Tang, "An AI-Based Curling Game System for Winter Olympics", Research, vol. 2022, Article ID 9805054, 17 pages, 2022. https://doi.org/10.34133/2022/9805054
+Utilizing AI technologies to digitize and virtualize the sports [13] not only helps the athletes to compete, but also improves spectators' interest of watching the game and shortens the distance between spectators and sports. In the future, with the development of technology, the combination of AI and sports will become more and more. We expect AI to bring convenience to sports, thus making the games a better sense of participation and experience for athletes and spectators.
 
 
 
+## **Reference**
+>[1]   K. Tuyls, S. Omidshafiei, P. Muller,et al.,“Game plan: What AI can do for football, and what football can do for AI,” The Journal of Artificial Intelligence Research, vol. 71, pp. 41-88, 2021. https://doi.org/10.1613/jair.1.12505
+
+>[2]   P.R. Kamble, A.G. Keskar, K.M.Bhurchandi, “Ball tracking in sports: a survey,” Artif Intell Rev, vol. 52, pp. 1655–1705, 2019. https://doi.org/10.1007/s10462-017-9582-2
+
+>[3]   C. Cuevas, D.  Quilón, N. García, “Techniques and applications for soccer video analysis: A survey,” Multimed Tools Appl, vol. 79, pp. 29685–29721, 2020. https://doi.org/10.1007/s11042-020-09409-0
+
+>[4]   “QuesTec,” http://www.questec.com/q2001/index.htm
+
+>[5]   “Hawk-Eye System,” https://www.hawkeyeinnovations.com/
+
+>[6]   H. M. Hsu, J. Cai, Y. Wang, et al., “Multi-Target Multi-Camera Tracking of Vehicles Using Metadata-Aided Re-ID and Trajectory-Based Camera Link Model,” IEEE Transactions on Image Processing, vol. 30, pp. 5198-5210, 2021. https://doi.org/10.1109/TIP.2021.3078124
+
+>[7]   W. Wu, M. Xu, Q. Liang, “Multi-camera 3D ball tracking framework for sports video,” IET Image Processing, vol. 14, no. 15, pp. 3751-3761, 2020. https://doi.org/10.1049/iet-ipr.2020.0757
+
+>[8]   R. Iguernaissi, D. Merad, K. Aziz, P. Drap, “People tracking in multi-camera systems: A review,” Multimedia Tools and Applications, vol. 78, no. 8, pp.10773-10793, 2019. https://doi.org/10.1007/s11042-018-6638-5
+
+>[9]   N. Wojke, A. Bewley, D. Paulus, "Simple online and realtime tracking with a deep association metric," 2017 IEEE International Conference on Image Processing (ICIP), Beijing, China, pp. 3645-3649. https://doi.org/10.1109/ICIP.2017.8296962
+
+>[10] E. Ristani, C. Tomasi, "Features for Multi-target Multi-camera Tracking and Re-identification." pp. 6036-6046. 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, Salt Lake City, UT, USA. https://doi.org/10.1109/CVPR.2018.00632
+
+>[11] M. Byeon, S. Oh, K. Kim, H.-J. Yoo, and J. Y. Choi, "Efficient Spatio-Temporal Data Association Using Multidimensional Assignment in Multi-Camera Multi-Target Tracking." Proceedings of the British Machine Vision Conference (BMVC), pages 68.1-68.12. BMVA Press, September 2015. https://dx.doi.org/10.5244/C.29.68
+
+>[12]  Xuanke Shi, Quan Wang, Chao Wang, Rui Wang, Longshu Zheng, Chen Qian, Wei Tang, "An AI-Based Curling Game System for Winter Olympics", Research, vol. 2022, Article ID 9805054, 17 pages, 2022. https://doi.org/10.34133/2022/9805054
+
+>[13]  P., Rahimian, L., Toka, "Optical tracking in team sports: A survey on player and ball tracking methods in soccer and other team sports," Journal of Quantitative Analysis in Sports, vol. 18, no. 1, pp. 35-57, 2022. https://doi.org/10.1515/jqas-2020-0088

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>An AI-Based Curling Game System for Winter Olympics | CurlingHunter for Beijing 2022 Winter Olympics</title>
+<meta name="generator" content="Jekyll v4.3.0" />
+<meta property="og:title" content="An AI-Based Curling Game System for Winter Olympics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
+<link rel="canonical" href="http://localhost:4002/jekyll/update/2022/10/22/CurlingHunter.html" />
+<meta property="og:url" content="http://localhost:4002/jekyll/update/2022/10/22/CurlingHunter.html" />
+<meta property="og:site_name" content="CurlingHunter for Beijing 2022 Winter Olympics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-22T15:35:41+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="An AI-Based Curling Game System for Winter Olympics" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-22T15:35:41+08:00","datePublished":"2022-10-22T15:35:41+08:00","description":"Introduction","headline":"An AI-Based Curling Game System for Winter Olympics","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4002/jekyll/update/2022/10/22/CurlingHunter.html"},"url":"http://localhost:4002/jekyll/update/2022/10/22/CurlingHunter.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4002/feed.xml" title="CurlingHunter for Beijing 2022 Winter Olympics" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">CurlingHunter for Beijing 2022 Winter Olympics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">An AI-Based Curling Game System for Winter Olympics</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-10-22T15:35:41+08:00" itemprop="datePublished">Oct 22, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>A multi-target multi-camera curling tracking system, termed <a href="https://spj.sciencemag.org/journals/research/2022/9805054/">CurlingHunter</a>, is proposed, which can be applied in actual curling games in real time to assist athletes to compete, enhance the interest of the game, etc. Due to the regulations of curling game, no auxiliary equipment can be added to the curling stones, hence only non-contact measurement methods such as machine vision can be used in CurlingHunter. CurlingHunter has solved these problems:</p>
+<ul>
+  <li>The problem of accurately capturing relatively small curling stones through long-sighted distance (&gt; 20 m) in the super-large space environment with many occlusions;</li>
+  <li>The problem of lens distortion correction in large scenes without interfering with the ice tracks;</li>
+  <li>The problem of accuracy of curling stone’s visual positioning on the ice sheet;</li>
+  <li>The problem of occlusions which would interfere with tracking and accuracy, while curling stone is easily blocked by athletes wiping ice, other peoples or objects during games;</li>
+  <li>The problem of tracking and re-identifying multiple curling stones due to that all curling stones have identical appearance features;</li>
+  <li>The problem of runtime in sing-camera system and multi-camera system.</li>
+</ul>
+
+<p>As the first system to be applied to curling game, CurlingHunter demonstrated excellent performances in 2022 Beijing Winter Olympic Games of curling and 2022 Beijing Winter Paralympic Games of curling. 
+Although we focus on curling, our system is readily transferable to other sports.</p>
+
+<h2 id="system-archetecture"><strong>System Archetecture</strong></h2>
+
+<p><img src="http://localhost:4002/images/Components.jpg" alt="System Archetecture" /></p>
+
+<p>The curling game of the 2022 Beijing Winter Olympics was held in Beijing “Ice Cube” (Fig. 1a), the largest curling stadiums in the history of the Olympics. There were four ice tracks about 46-meter length and 5-meter width in the middle of “Ice Cube” . 
+Our CurlingHunter consisted of forty-two cameras arranged in “Ice Cube” (Fig. 1a) with overlapping field of views (Fig. 1b) to ensure that every part of ice tracks was captured by at least three cameras from different angles so as to solve the problem of occlusions including people, truss, camera, etc.</p>
+
+<p>CurlingHunter consists of three main modules (Fig. 1d): single-camera tracking and visual positioning, multi-camera data association and trajectory generation, and motion analysis and trajectory prediction.</p>
+
+<h2 id="algorithm"><strong>Algorithm</strong></h2>
+<p><img src="http://localhost:4002/images/Methods.jpg" alt="Method" /></p>
+
+<p>We overview of three main module for CurlingHunter.</p>
+<ul>
+  <li>Single-camera tracking and visual positioning(Fig. 2a). The module consists of three stages, i.e. sing-camera detection and tracking, landmark detection, and lens distortion correction.</li>
+  <li>Multi-camera data association and trajectory generation (Fig. 2b). The module consists of three components, i.e. homography projection, time synchronization, LSTMM based region growing and multi-camera fusion module.</li>
+  <li>Trajectory prediction(Fig. 2c). The framework consists of three components, i.e. Encoder, Rotation Fusion Module and Decoder.</li>
+</ul>
+
+<p><img src="http://localhost:4002/images/Undistort.jpg" alt="Method" /></p>
+
+<p>In particular, we show the result of lens distortion correction from single image. It solved the problem of camera calibration in the stadium very gracefully.</p>
+
+<h2 id="results"><strong>Results</strong></h2>
+<p><img src="http://localhost:4002/images/Results.jpg" alt="Results" /></p>
+
+<p>Existing AI systems are used in tennis, basketball, and football, which are mainly used for post-game analysis to help athletes train or assist the referee in judging the games, and cannot be applied in real time to assist games. 
+Hawk-Eye System used in tennis is the most mature and advanced technologies applied in sports, but its runtime is ~ 10 s, which is above 1,000 times slower than ours (Our CurlingHunter only takes ~ 9.005 ms). 
+The supplementary material of our paper compares CurlingHunter with existing AI systems in detail, demonstrating that CurlingHunter is the first AI sports system in history that can be applied in real time to assist the game, improve the interest of watching game, etc.</p>
+
+<h2 id="media-reports"><strong>Media Reports</strong></h2>
+<p><a href="https://2022.cctv.com/2022/03/02/VIDEo6c7b8tv2DhGSIeAwrnY220302.shtml">CCTV5</a> | 
+<a href="https://tv.cctv.com/2022/02/17/VIDEYNtTNJj9Jkbg0HD0hMME220217.shtml?spm=C53121759377.PvNzMjwOU8x4.0.0">CCTV10</a> |
+<a href="http://sh-aia.com/dynamics/detail389.htm">WAIC 2022</a> | 
+<a href="http://www.cinn.cn/dfgy/202202/t20220216_252673_wap.html">中国工业新闻网</a> | 
+<a href="https://www.baidu.com/link?url=XNs_ZUGZHU1_ta0oC--VvYEjBRtK0YTgE5aF9LoGn_jOIxhLiU5t83ON-noDK6nA7IgmWdkH3XTPKmlxiQwnCsCbhZeCBuSqU_YaBmEaonC&amp;wd=&amp;eqid=bb8aba1e000921f0000000036353c367">中华网</a> | 
+<a href="https://jxt.zj.gov.cn/art/2022/2/22/art_1657979_58928232.html">浙江省经济和信息化厅</a> | 
+<a href="https://baijiahao.baidu.com/s?id=1724073030087092396&amp;wfr=spider&amp;for=pc">新民晚报</a> |<br />
+<a href="https://new.qq.com/rain/a/20211030A0446N00">腾讯新闻</a> | 
+<a href="https://www.sohu.com/a/498023908_120181749">搜狐</a> | 
+<a href="http://www.titan24.com/publish/app/data/2020/04/26/315681/os_news.html">体坛网</a> | 
+<a href="http://hw.yidianzixun.com/article/0bHe9PzU?s=hwbrowser&amp;appid=hwbrowser&amp;s_real=hwbrowser&amp;ctype=news&amp;from_related=1">一点资讯</a> | 
+<a href="https://export.shobserver.com/baijiahao/html/447890.html">上观网</a> | 
+<a href="https://www.baidu.com/link?url=8PENrdD4JtTbU4FRLbMgAmKw8P5l1K8k2sP9R_-Hprk-11CvYGXxTie0ZzFDkRqJLBGjRpDNM8jbqds-ReyDXOeNqOA1TgP07MLuOgZ30yG&amp;wd=&amp;eqid=bca23d5b001ccf48000000036353c1a0">财视传媒</a> | 
+<a href="https://baijiahao.baidu.com/s?id=1724791100724675147&amp;wfr=spider&amp;for=pc">智驾网</a> | 
+<a href="https://www.sensetime.com/cn/news-detail/41164739">商汤科技</a> | 
+<a href="https://baijiahao.baidu.com/s?id=1729136742236108141&amp;wfr=spider&amp;for=pc">科创版日报</a> | 
+<a href="https://baijiahao.baidu.com/s?id=1724508134127922968&amp;wfr=spider&amp;for=pc">中国经营报</a> | 
+<a href="https://baijiahao.baidu.com/s?id=1728608215909288051&amp;wfr=spider&amp;for=pc">红星新闻</a> | 
+<a href="https://page.om.qq.com/page/OLcb7f1Zh26fP2HlVty6z1cg0">科技湃</a> | 
+<a href="https://www.takefoto.cn/news/2022/02/25/10047236.shtml">北晚在线</a> |</p>
+
+<h2 id="supplementary-videos"><strong>Supplementary Videos</strong></h2>
+
+<center>
+<iframe width="640" height="368" src="/videos/1.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+<br />
+<font size="3">Verification the accuracy of CurlingHunter </font>
+<br />
+
+<iframe width="640" height="368" src="/videos/2.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+<br />
+
+<font size="3">Performance Test of CurlingHunter </font>
+<br />
+
+<iframe width="640" height="368" src="/videos/3.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+<br />
+<font size="3">Application in Beijing 2022 Winter Olympics </font>
+<br />
+
+<iframe width="640" height="368" src="/videos/4.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+<br />
+<font size="3">Application in Beijing 2022 Winter Paralympic </font>
+<br />
+
+<iframe width="640" height="368" src="/videos/5.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+
+<br />
+<font size="3">Live broadcast of Winter Olympics </font>
+<br />
+
+<iframe width="640" height="368" src="/videos/6.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+<br />
+<font size="3">Live broadcast of Winter Paralympic </font>
+<br />
+
+<iframe width="640" height="368" src="/videos/7.mp4" frameborder="0" allowfullscreen="">
+</iframe> 
+<br />
+<font size="3">Motion Analysis </font>
+<br />
+</center>
+
+<h2 id="citation"><strong>Citation</strong></h2>
+
+<blockquote>
+  <p>Xuanke Shi, Quan Wang, Chao Wang, Rui Wang, Longshu Zheng, Chen Qian, Wei Tang, “An AI-Based Curling Game System for Winter Olympics”, Research, vol. 2022, Article ID 9805054, 17 pages, 2022. https://doi.org/10.34133/2022/9805054</p>
+</blockquote>
+
+
+  </div><a class="u-url" href="/jekyll/update/2022/10/22/CurlingHunter.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CurlingHunter for Beijing 2022 Winter Olympics</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CurlingHunter for Beijing 2022 Winter Olympics</li><li><a class="u-email" href="mailto:shixuanke@sensetime.com  weitang@zju.edu.cn">shixuanke@sensetime.com  weitang@zju.edu.cn</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/https%3A%2F%2Fgithub.com%2Fxuankeshi"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">https://github.com/xuankeshi</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
